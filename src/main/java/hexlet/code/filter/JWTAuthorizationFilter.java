@@ -1,6 +1,6 @@
 package hexlet.code.filter;
 
-import hexlet.code.utils.JWTHelper;
+import hexlet.code.component.JWTHelper;
 import java.io.IOException;
 import java.util.Optional;
 import javax.servlet.FilterChain;

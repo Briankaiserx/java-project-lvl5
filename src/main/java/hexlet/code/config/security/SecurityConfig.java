@@ -2,7 +2,7 @@ package hexlet.code.config.security;
 
 import hexlet.code.filter.JWTAuthenticationFilter;
 import hexlet.code.filter.JWTAuthorizationFilter;
-import hexlet.code.utils.JWTHelper;
+import hexlet.code.component.JWTHelper;
 
 import java.util.List;
 

@@ -3,7 +3,7 @@ package hexlet.code.filter;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import hexlet.code.dto.LoginDto;
-import hexlet.code.utils.JWTHelper;
+import hexlet.code.component.JWTHelper;
 import java.io.IOException;
 import java.util.Map;
 import java.util.stream.Collectors;
