@@ -1,4 +1,4 @@
-package hexlet.code.service.impl;
+package hexlet.code.service;
 
 import hexlet.code.dto.TaskDto;
 import hexlet.code.model.Task;
@@ -8,7 +8,6 @@ import hexlet.code.repository.LabelRepository;
 import hexlet.code.repository.TaskRepository;
 import hexlet.code.repository.TaskStatusRepository;
 import hexlet.code.repository.UserRepository;
-import hexlet.code.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

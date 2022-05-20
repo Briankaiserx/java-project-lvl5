@@ -1,4 +1,4 @@
-package hexlet.code.service.impl;
+package hexlet.code.service;
 
 import hexlet.code.dto.UserDto;
 import hexlet.code.model.User;
@@ -56,9 +56,9 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     @Transactional
     public void deleteUser(Long id) {
         final User user = userRepository.findById(id).get();
-        boolean isPresentTaskForUser = taskRepository.findFirstByAuthorIdOrExecutorId(id, id).isPresent();
-        if (isPresentTaskForUser) {
-            throw new AccessDeniedException("Can't delete user with existing task(s)");
+        boolean taskUser = taskRepository.findFirstByAuthorIdOrExecutorId(id, id).isPresent();
+        if (taskUser) {
+            throw new AccessDeniedException("Can't delete user with existing task");
         }
         userRepository.delete(user);
     }

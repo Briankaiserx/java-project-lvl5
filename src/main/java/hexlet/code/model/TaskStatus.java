@@ -18,7 +18,7 @@ import java.util.Date;
 import static javax.persistence.TemporalType.TIMESTAMP;
 
 @Entity
-@Table(name = "task_statuses")
+@Table(name = "task_status")
 @Getter
 @Setter
 @AllArgsConstructor
