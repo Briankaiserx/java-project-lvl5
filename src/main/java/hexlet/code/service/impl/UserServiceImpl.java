@@ -6,7 +6,6 @@ import hexlet.code.repository.TaskRepository;
 import hexlet.code.repository.UserRepository;
 import hexlet.code.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DuplicateKeyException;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -39,10 +38,6 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         user.setLastName(userDto.getLastName());
         user.setEmail(userDto.getEmail());
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));
-
-        if (userRepository.findByEmail(userDto.getEmail()).isPresent()) {
-            throw new DuplicateKeyException("User with this email is already exist");
-        }
 
         return userRepository.save(user);
     }

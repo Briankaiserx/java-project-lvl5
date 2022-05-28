@@ -80,7 +80,9 @@ public class UserController {
     public User createUser(
             @Parameter(description = "Data for creating new User", required = true)
             @RequestBody @Valid UserDto userDto) {
-
+        if (userRepository.findByEmail(userDto.getEmail()).isPresent()) {
+            throw new DuplicateKeyException("User with this email is already exist");
+        }
         return userService.createUser(userDto);
     }
 
